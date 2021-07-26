@@ -33,14 +33,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Upgrade PIP
-RUN pip install pip pipenv --upgrade
-
-# sklearn opencv, numpy, and pandas
-RUN pip install scikit-learn opencv-contrib-python numpy pandas
-
-# tensorflow (including Keras)
-RUN pip install tensorflow keras
 
 
 CMD ["./scripts/entrypoint.sh"]
