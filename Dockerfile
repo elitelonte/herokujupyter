@@ -42,14 +42,5 @@ RUN pip install scikit-learn opencv-contrib-python numpy pandas
 # tensorflow (including Keras)
 RUN pip install tensorflow keras
 
-# pytorch (cpu)
-RUN apt-get update && apt-get -y install gcc mono-mcs && rm -rf /var/lib/apt/lists/*
-RUN pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
-
-# fastai
-RUN pip install fastai
-
-# Project installs
-RUN pipenv install --skip-lock --system --dev
 
 CMD ["./scripts/entrypoint.sh"]
